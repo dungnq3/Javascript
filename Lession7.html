@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Bài 7 Event</title>
+	</head>
+	<body>
+		
+		<script>
+			function show(){
+				var input = document.getElementById("message"); // trả về 1 đối tượng
+				var div = document.getElementById("result");
+				div.innerHTML = input.value;
+			}
+		</script>
+		<input type="text" id="message" value="onkeyup dùng để nhận giá trị từ bàn phím" onkeyup="show()"/>
+		<div id = "result"></div>
+		
+		<a onclick="alert('Click thẻ a');">Click me</a>
+		<hr>
+		<a href="javascript:void(0)" id ="double">Double click me</a>
+		<script>
+			var db = document.getElementById('double');
+			db.addEventListener('dblclick',function(){
+				alert("Double click");
+			});
+		</script>
+		
+		
+		<h2>Thêm sự kiện</h2>
+		<input type="button" id="show-btn" value="Click me " />
+		<script>
+			var button = document.getElementById('show-btn');
+			button.onclick = function(){
+				alert('Click click click');
+			}
+		</script>
+		<h2>Thêm cho nhiều element</h2>
+		<input type="button" class="abc" value="Click me 1" />
+		<input type="button" class="abc" value="Click me 2" />
+		<input type="button" class="abc" value="Click me 3" />
+		<input type="button" id="show" value="Click me 4" />
+		
+		<script>
+			var list = document.getElementsByClassName("abc");
+			for(i = 0; i < list.length ; i++){
+				list[i].onclick = function()
+                {
+                    alert('Xin chào, bạn vừa click vào tôi'); 
+                    return false
+                };
+			}
+		</script>
+	</body>
+</html>

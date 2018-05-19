@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Bài 3 hàm alert(), confirm(), prompt()</title>
+		<script>
+			var name = prompt("Nhập tên");
+			alert(name);
+		</script>
+	</head>
+	<body>
+		Alert(message) in 1 thông báo popup
+		<input id="button" type="button" onclick="alert('Thông báo click')" value = "Click"/>
+		<script>
+			var button = document.getElementById('button');
+			button.addEventListener('click',function(){
+				confirm("Xác nhân đang click");
+			});
+		</script>
+	</body>
+</html>

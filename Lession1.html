@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Bài 1 Khởi tạo javascript cơ bản</title>
+		<script>
+			alert("Javascript ở phần head");
+		</script>
+		
+	</head>
+	<body>
+		<input id=clickme type="button" value="Click Me"/>
+		<script> //tạo script liên quan đến element nào thì phải ở dưới nó
+			var button = document.getElementById('clickme'); //lấy button
+			button.addEventListener('click',function(){
+				alert('Đang click Button');
+			});
+		</script>
+	</body>
+</html>
