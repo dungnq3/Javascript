@@ -42,10 +42,11 @@
 		<script>
 			var list = document.getElementsByClassName("abc");
 			for(i = 0; i < list.length ; i++){
-				list[i].onclick = function()
+				var item = list[i];
+				item.onclick = function()
                 {
-                    alert('Xin chào, bạn vừa click vào tôi'); 
-                    return false
+                    alert('Xin chào, bạn vừa click vào' + item.value); 
+                    return false;
                 };
 			}
 		</script>

@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<title>Demo</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="show.js"></script>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<div>
+			<div>
+				<h2>Lý thuyết</h2>
+				<p>Yêu cầu: Nghiên cứu các hàm truy xuất các phẩn tử trong html theo bộ chọn selector mong muốn bằng js và jquery</p>
+				<p>Nội dụng nghiên cứu:</p>
+				<p>	+ Selector là gì? ->Sự phân cấp và các thuộc tích của thẻ HTML gọi là selector.Dựa vào phân cấp theo tag, id, class để truy xuất phần tử html</p>
+				<!-- Javascript -->
+				<p> + DOM là gì? -> Dùng để xử lý các phần tử trong html thông qua đối tượng document</p>
+				<p> + DOM Element -> Truy xuất đến thẻ html thông qua thuộc tính id, class, tag name, cú pháp CSS selector </p>
+				<p> 	- Ví dụ: document.getElementById('id'), document.getElementsByTagName('tag name'), document.getElementsByClassName('class'),document.querySelectorAll("selector.css");</p>	
+				<p> + DOM HTML -> Xử lý nội dung và thuộc tính của thẻ</p>
+				<p>		- Ví dụ: .innerHTML: nội dung, .attributeName: thuộc tính như name, value, type,...</p>
+				<p> + DOM CSS -> xử lý css qua đối tượng style </p>
+				<p> 	- Ví dụ: .style.cssName </p>
+				<p> + DOM Node -> là đối tượng trả về từ DOM Element </p>
+				<p> 	- Ví dụ: tạo node mới document.createElement("p"); p.appendChild(): Thêm vào vị trí cuối cùng, insertBefore(insert,child), thêm vào trước child, removeChild(), replaceChild();
+				<!-- Jquery -->
+				<p> + Bộ trọn selector trong jquery <a href="https://hocwebchuan.com/reference/jquery/jquery_selectors.php">Bộ chọn select</a></p>
+				<p> +  <a href="https://hocwebchuan.com/reference/jquery/jquery_function.php">Hàm(selectors) trong jquery</a></p>
+				<p>Tổng kết: Biết cách chọn selector(xác định các thẻ) -> lấy được đối tượng(các thẻ html), xác định được parent và child -> Xử lý sự kiện</p>
+				<hr>
+			</div>
+			<input type="button" value="Ẩn" onclick = "showContent(this)"/>  <!-- onclick = "showContent(this)" -->
+		</div>
+		<div class="content">
+			<div>
+			<h2 style="text-align:center;">Thực hành: Đăng ký tham gia hoạt động hàng tuần của câu lạc bộ, tối thiểu 3 hoạt động</h2>
+				<div class="ds">
+					<h3>Danh sách các hoạt động của câu lạc bộ</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Tiêu dề</th>
+								<th>Thời gian</th>
+								<th>Chọn</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="maHD">1</td>
+								<td>Hoạt động 1</td>
+								<td>Thứ 2</td>
+								<td><input type="checkbox" /></td> 
+							</tr>
+							<tr>
+								<td class="maHD">2</td>
+								<td>Hoạt động 2</td>
+								<td>Thứ 3</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">3</td>
+								<td>Hoạt động 3</td>
+								<td>Thứ 4</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">4</td>
+								<td>Hoạt động 4</td>
+								<td>Thứ 5</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">5</td>
+								<td>Hoạt động 5</td>
+								<td>Thứ 6</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">6</td>
+								<td>Hoạt động 6</td>
+								<td>Thứ 7</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">7</td>
+								<td>Hoạt động 7</td>
+								<td>Chủ nhật</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">8</td>
+								<td>Hoạt động 8</td>
+								<td>Thứ 2</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">9</td>
+								<td>Hoạt động 9</td>
+								<td>Thứ 3</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+							<tr>
+								<td class="maHD">10</td>
+								<td>Hoạt động 10</td>
+								<td>Thứ 4</td>
+								<td><input type="checkbox" /></td>
+							</tr>
+						</tbody>	
+					</table>
+				</div>
+				<div class="kq">
+					<h3>Danh sách các hoạt động đã chọn</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Tiêu dề</th>
+								<th>Thời gian</th>
+								<th>Hủy</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>	
+					</table>
+				</div>
+				<hr>		
+				<input type="button" value="Đăng ký" id="dk-btn"/>
+			</div>
+			<input type="button" value="Ẩn" onclick = "showContent(this)"/> <!-- onclick = "showContent(this)" -->
+		</div>
+	</body>
+</html>

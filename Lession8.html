@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Bài 8 onload</title>
+</head>
+  <body>
+    <button onclick="do_validate()">Click me</button>
+    <script language="javascript">
+     alert(1);
+ 
+window.onload = function()
+{
+    alert(3);   
+};
+ 
+alert(2);
+
+
+var mang = ["Học", "lập", "trình", "tại", "freetuts.net"];
+ 
+// in mảng
+document.write(mang.valueOf());
+document.write('<br/>');
+ 
+// Thêm và in
+mang.push("Miễn phí");
+document.write(mang.valueOf());
+
+var mang2 = ["Học", "lập", "trình", "tại", "freetuts.net"];
+ 
+// in mảng
+document.write(mang2.valueOf());
+document.write('<br/>');
+ 
+// Thêm và in
+mang2.shift();
+document.write(mang2.valueOf());
+    </script>
+  </body>
+</html>
