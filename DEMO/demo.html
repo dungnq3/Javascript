@@ -4,14 +4,15 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="show.js"></script>
 		<link rel="stylesheet" type="text/css" href="main.css">
+	
 	</head>
 	<body>
 		<div>
-			<div>
+			<div class="content">
 				<h2>Lý thuyết</h2>
-				<p>Yêu cầu: Nghiên cứu các hàm truy xuất các phẩn tử trong html theo bộ chọn selector mong muốn bằng js và jquery</p>
+				<p manguodung ='b'>Yêu cầu: Nghiên cứu các hàm truy xuất các phẩn tử trong html theo bộ chọn selector mong muốn bằng js và jquery</p>
 				<p>Nội dụng nghiên cứu:</p>
-				<p>	+ Selector là gì? ->Sự phân cấp và các thuộc tích của thẻ HTML gọi là selector.Dựa vào phân cấp theo tag, id, class để truy xuất phần tử html</p>
+				<p>	+ Selector là gì? -> Dựa vào phân cấp theo tag, id, class để truy xuất phần tử html</p>
 				<!-- Javascript -->
 				<p> + DOM là gì? -> Dùng để xử lý các phần tử trong html thông qua đối tượng document</p>
 				<p> + DOM Element -> Truy xuất đến thẻ html thông qua thuộc tính id, class, tag name, cú pháp CSS selector </p>
@@ -28,10 +29,10 @@
 				<p>Tổng kết: Biết cách chọn selector(xác định các thẻ) -> lấy được đối tượng(các thẻ html), xác định được parent và child -> Xử lý sự kiện</p>
 				<hr>
 			</div>
-			<input type="button" value="Ẩn" onclick = "showContent(this)"/>  <!-- onclick = "showContent(this)" -->
+			<input type="button" class="show" value="Ẩn"/>  <!-- onclick = "showContent(this)" -->
 		</div>
-		<div class="content">
-			<div>
+		<div>
+			<div class="content">
 			<h2 style="text-align:center;">Thực hành: Đăng ký tham gia hoạt động hàng tuần của câu lạc bộ, tối thiểu 3 hoạt động</h2>
 				<div class="ds">
 					<h3>Danh sách các hoạt động của câu lạc bộ</h3>
@@ -109,6 +110,7 @@
 					</table>
 				</div>
 				<div class="kq">
+				
 					<h3>Danh sách các hoạt động đã chọn</h3>
 					<table>
 						<thead>
@@ -125,9 +127,9 @@
 					</table>
 				</div>
 				<hr>		
-				<input type="button" value="Đăng ký" id="dk-btn"/>
+				<input type="button" value="Đăng ký" id="dk-btn" class='abc'/>
 			</div>
-			<input type="button" value="Ẩn" onclick = "showContent(this)"/> <!-- onclick = "showContent(this)" -->
+			<input type="button" class="show" value="Ẩn"/> <!-- onclick = "showContent(this)" -->
 		</div>
 	</body>
 </html>

@@ -1,0 +1,151 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Bài tập</title>
+    <style>
+        table {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hiển thị nút đăng ký nếu chọn >= 10 tín chỉ. Click nút hiện thông báo đăng ký thành công nếu hợp lệ (khác thứ ngày)</h2>
+    <div class="content">
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên môn học</th>
+                        <th>Tín chỉ</th>
+                        <th>Thứ</th>
+                        <th>Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Toán</td>
+                        <td>3</td>
+                        <td>Thứ 2</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Lý</td>
+                        <td>2</td>
+                        <td>Thứ 3</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Hóa</td>
+                        <td>2</td>
+                        <td>Thứ 4</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Văn</td>
+                        <td>3</td>
+                        <td>Thứ 5</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Anh văn</td>
+                        <td>3</td>
+                        <td>Thứ 6</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Sinh</td>
+                        <td>2</td>
+                        <td>Thứ 7</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Sử</td>
+                        <td>2</td>
+                        <td>Thứ 2</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Địa</td>
+                        <td>2</td>
+                        <td>Thứ 3</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Giáo dục công dân</td>
+                        <td>1</td>
+                        <td>Thứ 4</td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input id="dangky" type="button" value="Đăng ký" style="display:none"/>
+        </div>
+    </div>
+    <script>
+
+        $(document).ready(function() {
+            var soTinChi = 0;
+            var thoiGian = [];
+
+            $('input[type=checkbox]').on('click', function () {
+                var tr = $(this).closest('tr');
+
+                if ($(this).prop('checked') == true) {  
+                    soTinChi += parseInt(tr.find('td:eq(2)').text());
+                    thoiGian.push(tr.find('td:eq(3)').text());
+                } else {
+                    soTinChi -= parseInt($(this).closest('tr').find('td:eq(2)').text());
+                    thoiGian.pop(tr.find('td:eq(3)').text());
+                }
+                if (soTinChi >= 10) {
+                    $('#dangky').show();
+                } else {
+                    $('#dangky').hide();
+                }
+            });
+            
+            $('#dangky').on('click', function () {
+                //var x = thoiGian.length;
+                //var y = $.unique(thoiGian).length;
+                //console.log(thoiGian);
+                //if (soTinChi >= 10 && x != y) {
+                //    alert('Đăng ký môn học không hợp lệ. Vui lòng đăng ký từ 10 tín chỉ trở lên và khác thời gian học');
+                //} else {
+                //    alert('Đăng ký thành công');
+                //} 
+                var check = true;
+                for (i = 0; i < thoiGian.length; i++) {
+                    for (j = i + 1; j < thoiGian.length; j++) {
+                        if (thoiGian[i] == thoiGian[j]) {
+                            check = false;
+                            break;
+                        }
+                    }
+                }
+                if (check) {
+                    alert('Đăng ký thành công');
+                } else {
+                    alert('Đăng ký môn học không hợp lệ. Vui lòng đăng ký từ 10 tín chỉ trở lên và khác thời gian học');
+                }
+            });    
+        });
+    </script>
+</body>
+</html>

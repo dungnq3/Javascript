@@ -1,29 +1,30 @@
 //javascript thuần
 //showContent
 
-function showContent(obj){
-	if(obj.value == 'Ẩn'){
-	obj.parentElement.children[0].style.display = 'none';
-	obj.value = 'Hiện'; 
-	} else {
-		obj.parentElement.children[0].style.display = 'block';
-		obj.value = 'Ẩn';
-	}
-};
+// function showContent(obj){
+	// if(obj.value == 'Ẩn'){
+	// obj.parentElement.children[0].style.display = 'none';
+	// obj.value = 'Hiện'; 
+	// } else {
+		// obj.parentElement.children[0].style.display = 'block';
+		// obj.value = 'Ẩn';
+	// }
+// };
 
 //jquery
 $(document).ready(function(){
-	//showContent
-	//$('input[type=button]').on('click',function(){
-	//	if($(this).text() == 'Ẩn'){
-	//		$(this).parent().find('div.content').hide();
-	//		$(this).text('Hiện');
-	//	} else {
-	//		$(this).parent().find('div.content').show();
-	//		$(this).text('Ẩn');
-	//	}
-	//});
+	 //	showContent
+	$('.show').on('click',function(){
+		if($(this).attr('value') == 'Ẩn'){
+			$(this).parent().find('div.content').hide();
+			$(this).attr('value','Hiện');
+		} else {
+			$(this).parent().find('div.content').show();
+			$(this).attr('value','Ẩn');
+		}
+	});
 	//table
+
 	$('.ds table tbody tr input').on('click',function(){
 		var record = $(this).closest('tr'); //closest('selector') hoặc parents('selector');
 		record.hide();
@@ -59,6 +60,12 @@ $(document).ready(function(){
 				alert('Đăng ký thành công');
 			}
 		}
+	});
+	//console.log($('.ds tbody tr').html());
+	$('table tbody tr').hover(function(){
+		$(this).css('color','red');
+    },function(){
+        $(this).css('color','black');
 	});
 });
 
