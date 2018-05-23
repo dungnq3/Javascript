@@ -1,0 +1,78 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+          <div class="demo" width: 100%;">
+              Margin là khoảng trống giữa các elements, khoảng cách tính từ ngoài viến element này đến element kia.
+              Margin giữa 2 khối block. Một margin-bottom, một margin-top.
+              <div class="margin-block">
+                  <p style="margin-bottom:10px;border:1px solid green">block bottom 10px</p>
+                  <p style="margin-top:9px;border:1px solid black">block top 9px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa 2 block = khoảng cách của phần tử có margin lớn hơn nếu chúng khác nhau. Kết quả: 10px</p>
+
+              Margin giữa block và inline
+              <div class="margin-block-inline">
+                  <p style="margin-bottom:20px;border:1px solid green">Block bottom 20px</p><p style="margin-top:20px; display:inline;border:1px solid green">Inline</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa block và inline = khoảng cách margin của block. Kết quả: 20px (tính đến hết border của thẻ inline)</p>
+
+              Margin giữa block và inline-block
+              <div class="margin-block-inline">
+                  <p style="margin-bottom:20px;border:1px solid green">Block bottom 20px</p>
+                  <p style="margin-top:15px; display:inline-block;border:1px solid green">Inline - Block top 15px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa block và inline-block = tổng khoảng cách margin. Kết quả: 35px</p>
+
+              Margin giữa block và table
+              <div class="margin-block-table">
+                  <p style="margin-bottom:10px;border:1px solid green">Block bottom 10px</p>
+                  <p style="margin-top:20px; display:table;border:1px solid black">Table top 20px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa block và table = khoảng cách của phần tử có margin lớn hơn nếu chúng khác nhau.Kết quả: 20px</p>
+
+              Margin giữa block và inline-table
+              <div class="margin-block-table">
+                  <p style="margin-bottom:10px;border:1px solid green">Block bottom 10px</p>
+                  <p style="margin-top:20px; display:inline-table;border:1px solid black">Inline-Table top 20px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa block và inline-table = tổng khoảng cách margin. Kết quả 30px</p>
+
+
+              Margin giữa 2 inline
+              <div class="margin-inline">
+                  <p style="display:inline;margin-right:10px;border:1px solid green">Inline 1 margin right 10px</p><p style="display:inline;margin-left:5px;border:1px solid green">Inline 2 margin left 5px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa 2 inline = tổng khoảng cách margin. Kết quả = 15px</p>
+
+              Margin giữa inline vs table
+              <div class="margin-inline">
+                  <p style="display:table;margin-bottom:10px;border:1px solid green">Table  margin bottom 10px</p><p style="display:inline;margin-left:5px;border:1px solid green">Inline</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa table và inline = khoảng cách margin của block. Kết quả: 10px (tính đến hết border của thẻ inline)</p>
+
+              Margin giữa inline vs inline-block
+              <div class="margin-inline">
+                  <p style="display:inline-block;margin-bottom:10px;margin-right:10px;border:1px solid green">Table  margin right 10px</p><p style="display:inline;margin-left:5px;border:1px solid green">Inline left 5px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa inline-block và inline = Tổng khoảng cách margin. Kết quả 15px</p>
+
+              Margin giữa inline vs inline-table
+              <div class="margin-inline">
+                  <p style="display:inline-table;margin-bottom:10px;margin-right:10px;border:1px solid green">Inline-Table  margin right 10px</p><p style="display:inline;margin-left:5px;border:1px solid green">Inline left 5px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa inline-block và inline = Tổng khoảng cách margin. Kết quả 15px</p>
+
+              Margin giữa inline-block vs inline-block
+              <div>
+                  <p style="display:inline-block;margin-right:10px;border:1px solid green">Inline-Block  margin right 10px</p><p style="display:inline-block;margin-left:10px;border:1px solid green">Inline-Block  margin left 10px</p>
+              </div>
+              <p style="color:red"> -> Khoảng cách giữa inline-block và inline = Tổng khoảng cách margin. Kết quả 20px</p>
+
+
+          </div>
+</body>
+</html>
